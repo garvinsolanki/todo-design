@@ -17,15 +17,12 @@ window.addEventListener('load', () => {
 		task_el.appendChild(task_content_el);
 
 		const task_check_el = document.createElement('input');
-		task_check_el.classList.add('check');
-		task_check_el.type = 'checkbox'
-		task_check_el.id = 'das';
+		task_check_el.type = 'checkbox';
+
 		
 		const task_input_el = document.createElement('label');
 		task_input_el.classList.add('text');
-		task_input_el.for = 'das';
-		task_input_el.value = task;
-		task_input_el.setAttribute('readonly', 'readonly');
+		task_input_el.innerText = task;
 
 		task_content_el.appendChild(task_check_el);
 		task_content_el.appendChild(task_input_el);

@@ -159,11 +159,4 @@ main {
 	color: white;
 	background: crimson;
 }
-.check {
-	color: black;
-	background: white;
-}
-.check:hover {
-	color: white;
-	background: purple;
-}
+
