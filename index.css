@@ -58,7 +58,7 @@ input, button {
 	font-weight: 700;
 	
 	border-radius: 1rem ;
-	margin-left: -14.7%;
+	margin-left: -14.6%;
 	cursor: pointer;
 	transition: 0.4s;
 }
@@ -90,8 +90,7 @@ main {
 	color: white;
 	margin-bottom: 1rem;
 }
-
-#tasks .task {
+ .task {
 	display: flex;
 	justify-content: space-between;
 	background-color: white;
@@ -100,12 +99,16 @@ main {
 	margin-bottom: 1rem;
 }
 
-.task .content {
+ .content {
 	flex: 1 1 0%;
-	background: rgb(0, 0, 0, 0.5);
+	background: lightblue;
 }
-
-.task .content .text {
+ .chekbux
+{
+	transform: scale(1.5);
+	float: left;
+} 
+ .text {
 	color: black;
 	font-size: 1.125rem;
 	width: 100%;
@@ -113,17 +116,17 @@ main {
 	transition: 0.4s;
 }
 
-.task .content .text:not(:read-only) {
+ .text:not(:read-only) {
 	color: black;
 }
 
-.task .actions {
+ .actions {
 	display: flex;
 	margin: 0 -0.5rem;
 	
 }
 
-.task .actions button {
+ .actions button {
 	cursor: pointer;
 	margin: 0 0.5rem;
 	font-size: 1.125rem;
@@ -132,36 +135,35 @@ main {
 	transition: 0.4s;
 }
 
-.task .actions button:hover {
+ .actions button:hover {
 	opacity: 0.8;
 }
 
-.task .actions button:active {
+ .actions button:active {
 	opacity: 0.6;
 }
 
-.task .actions .edit {
+ .edit {
 	color: green;
 	
 }
-.task .actions .edit:hover {
+ .edit:hover {
 	color: white;
 	background: green;
 }
 
-.task .actions .delete {
+ .delete {
 	color: crimson;
 }
-.task .actions .delete:hover {
+.delete:hover {
 	color: white;
 	background: crimson;
 }
-.task .actions .check {
-	color: plum;
-	border: 1px solid black;
-	
+.check {
+	color: black;
+	background: white;
 }
-.task .actions .check:hover {
+.check:hover {
 	color: white;
-	
+	background: purple;
 }

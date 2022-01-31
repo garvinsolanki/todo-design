@@ -16,13 +16,18 @@ window.addEventListener('load', () => {
 
 		task_el.appendChild(task_content_el);
 
-		const task_input_el = document.createElement('input');
+		const task_check_el = document.createElement('input');
+		task_check_el.classList.add('check');
+		task_check_el.type = 'checkbox'
+		task_check_el.id = 'das';
+		
+		const task_input_el = document.createElement('label');
 		task_input_el.classList.add('text');
-		task_input_el.type = 'text';
+		task_input_el.for = 'das';
 		task_input_el.value = task;
 		task_input_el.setAttribute('readonly', 'readonly');
 
-
+		task_content_el.appendChild(task_check_el);
 		task_content_el.appendChild(task_input_el);
 
 		const task_actions_el = document.createElement('div');
@@ -36,11 +41,7 @@ window.addEventListener('load', () => {
 		task_delete_el.classList.add('delete');
 		task_delete_el.innerText = 'Delete';
 
-		/*const task_check_el = document.createElement('button');
-		task_check_el.classList.add('check');
-		task_check_el.innerText = 'Check';
-
-		task_actions_el.appendChild(task_check_el);*/
+		
 		task_actions_el.appendChild(task_edit_el);
 		task_actions_el.appendChild(task_delete_el);
 
@@ -61,13 +62,13 @@ window.addEventListener('load', () => {
 			}
 		});
 
-/*		task_check_el.addEventListener('click', (e) => {
+		/*task_check_el.addEventListener('click', (e) => {
 			if (task_check_el.innerText.toLowerCase() == "Check") {
 				task_input_el.setAttribute("checked");
 				task_check_el.focus();
 			} else {
-				task_check_el.innerText = "check";
-				task_input_el.setAttribute("checked");
+				task_check_el.innerText = "UnCheck";
+				task_input_el.setAttribute("UNchecked");
 			}
 		});*/
 
