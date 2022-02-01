@@ -170,3 +170,6 @@ main {
 	color: white;
 	background: pu;
 }
+.taskDone {
+	text-decoration: line-through;
+}

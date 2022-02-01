@@ -75,7 +75,7 @@ function disPlay()
 
 		list_el.appendChild(task_el);
 
-
+		
 		task_edit_el.addEventListener('click', (e) => {
 			if (task_edit_el.innerText.toLowerCase() == "edit") {
 				task_edit_el.innerText = "Save";
@@ -92,7 +92,17 @@ function disPlay()
 		});
 
 		checkbox.addEventListener('click',(e) => {
-			
+			let thm = document.getElementById(todoarr[i]);
+			if(checkbox.checked == true)
+			{
+				
+				alert(`Congrats...! You Done Your ${todoarr[i]}`);
+				thm.classList.add("TaskDone");
+			}	
+			else
+			{
+				thm.classList.remove("TaskDone");
+			}				
 			
 		});
 	}
