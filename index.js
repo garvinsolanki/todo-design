@@ -16,15 +16,17 @@ window.addEventListener('load', () => {
 
 		task_el.appendChild(task_content_el);
 
-		const task_check_el = document.createElement('input');
-		task_check_el.type = 'checkbox';
-
-		
-		const task_input_el = document.createElement('label');
+		const task_input_el = document.createElement('input');
 		task_input_el.classList.add('text');
-		task_input_el.innerText = task;
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
 
-		task_content_el.appendChild(task_check_el);
+		const checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.id = 'tas';
+
+		task_content_el.appendChild(checkbox);
 		task_content_el.appendChild(task_input_el);
 
 		const task_actions_el = document.createElement('div');
@@ -59,20 +61,12 @@ window.addEventListener('load', () => {
 			}
 		});
 
-		/*task_check_el.addEventListener('click', (e) => {
-			if (task_check_el.innerText.toLowerCase() == "Check") {
-				task_input_el.setAttribute("checked");
-				task_check_el.focus();
-			} else {
-				task_check_el.innerText = "UnCheck";
-				task_input_el.setAttribute("UNchecked");
-			}
-		});*/
+		checkbox.addEventListener('click', (e) => {
+			task_input_el.textContent('marked');
+		});
 
 		task_delete_el.addEventListener('click', (e) => {
 			list_el.removeChild(task_el);
 		});
 	});
 });
-
-//https://garvinsolanki.github.io/todo-design/

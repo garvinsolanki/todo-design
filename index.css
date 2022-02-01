@@ -33,7 +33,7 @@ header h1{
 }
 
 input, button {
-	appearance: none;
+	
 	border: none;
 	outline: none;
 	background: none;
@@ -106,6 +106,9 @@ main {
  .chekbux
 {
 	transform: scale(1.5);
+	height: 1rem;
+	width: 1rem;
+	background: lightgreen;
 	float: left;
 } 
  .text {
@@ -159,4 +162,11 @@ main {
 	color: white;
 	background: crimson;
 }
-
+.check {
+	color: black;
+	background: lightgreen;
+}
+.check:hover {
+	color: white;
+	background: pu;
+}
