@@ -1,13 +1,35 @@
-window.addEventListener('load', () => {
-	const form = document.getElementById("new-task-form");
-	const input = document.getElementById("new-task-input");
-	const list_el = document.getElementById("tasks");
+const form = document.getElementById("new-task-form");
+const input = document.getElementById("new-task-input");
+const list_el = document.getElementById("tasks");
+let count =0;
+const todoarr = [];
 
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if(input.value === "")
+	{
+		alert('TextBox Is Empty...!","Sorry..! You Have To Enter Something In Box..!');
+	}
+	else{
+	addTodo();
+	}
+	input.value = "";
+});
 
-		const task = input.value;
+function addTodo()
+{
+	 todoarr.push(input.value);
+	disPlay();
+	input.value = "";
+}
 
+function disPlay()
+{
+	
+	for(let i = count;i<todoarr.length;i++)
+	{
+		count++;
+		
 		const task_el = document.createElement('div');
 		task_el.classList.add('task');
 
@@ -18,13 +40,17 @@ window.addEventListener('load', () => {
 
 		const task_input_el = document.createElement('input');
 		task_input_el.classList.add('text');
+		task_input_el.id= todoarr[i];
 		task_input_el.type = 'text';
-		task_input_el.value = task;
+		task_input_el.value = todoarr[i];
 		task_input_el.setAttribute('readonly', 'readonly');
 
 		const checkbox = document.createElement('input');
 		checkbox.type = 'checkbox';
-		checkbox.id = 'tas';
+		checkbox.classList.add('checkbux');
+		checkbox.id = i;
+		
+		
 
 		task_content_el.appendChild(checkbox);
 		task_content_el.appendChild(task_input_el);
@@ -34,7 +60,8 @@ window.addEventListener('load', () => {
 		
 		const task_edit_el = document.createElement('button');
 		task_edit_el.classList.add('edit');
-		task_edit_el.innerText = 'Edit';
+		task_edit_el.innerText = 'Edit'; 
+		
 
 		const task_delete_el = document.createElement('button');
 		task_delete_el.classList.add('delete');
@@ -48,7 +75,6 @@ window.addEventListener('load', () => {
 
 		list_el.appendChild(task_el);
 
-		input.value = '';
 
 		task_edit_el.addEventListener('click', (e) => {
 			if (task_edit_el.innerText.toLowerCase() == "edit") {
@@ -61,12 +87,13 @@ window.addEventListener('load', () => {
 			}
 		});
 
-		checkbox.addEventListener('click', (e) => {
-			task_input_el.textContent('marked');
-		});
-
 		task_delete_el.addEventListener('click', (e) => {
 			list_el.removeChild(task_el);
 		});
-	});
-});
+
+		checkbox.addEventListener('click',(e) => {
+			
+			
+		});
+	}
+}

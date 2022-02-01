@@ -97,19 +97,17 @@ main {
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
+	background: lightblue;
 }
 
  .content {
 	flex: 1 1 0%;
-	background: lightblue;
+	
+	
 }
- .chekbux
-{
-	transform: scale(1.5);
-	height: 1rem;
-	width: 1rem;
-	background: lightgreen;
-	float: left;
+ .checkbux{
+	transform: scale(1.7);
+
 } 
  .text {
 	color: black;
@@ -117,6 +115,8 @@ main {
 	width: 100%;
 	display: block;
 	transition: 0.4s;
+	margin-top: -2%;
+	padding-left: 5%;
 }
 
  .text:not(:read-only) {
